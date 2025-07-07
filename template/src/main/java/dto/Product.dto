@@ -1,0 +1,23 @@
+export org.example.mysteryboxlearn.product.root.entity.Product
+
+input ProductInput {
+    #allScalars(Product)
+
+    id
+
+    id(category)
+}
+
+specification ProductSpec {
+    #allScalars
+
+    like /i(name)
+
+    like /i(brand)
+
+    id(category)
+
+    like /i(description)
+
+    id(creator)
+}

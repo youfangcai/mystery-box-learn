@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mystery_box_learn
+    username: root
+    password: YFC789789
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  data:
+    redis:
+      host: redis-11772.c10.us-east-1-2.ec2.redns.redis-cloud.com
+      port: 11772
+      username: default
+      password: 1RS47LTed7IY4HwilrSGh8ENQWa2WNVO
+
+tenant:
+  map:
+    key: xxx
+
+wx:
+  pay:
+    notify-url: xxx

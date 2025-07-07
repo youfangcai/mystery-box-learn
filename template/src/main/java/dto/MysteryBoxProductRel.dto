@@ -1,0 +1,13 @@
+export org.example.mysteryboxlearn.box.product.entity.MysteryBoxProductRel
+
+input MysteryBoxProductRelInput {
+    #allScalars(MysteryBoxProductRel)
+
+    id
+}
+
+specification MysteryBoxProductRelSpec {
+    #allScalars
+
+    id(creator)
+}

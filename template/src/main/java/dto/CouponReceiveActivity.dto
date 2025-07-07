@@ -1,0 +1,25 @@
+export org.example.mysteryboxlearn.coupon.activity.entity.CouponReceiveActivity
+
+input CouponReceiveActivityInput {
+    #allScalars(CouponReceiveActivity)
+
+    id
+
+    id(coupon)
+}
+
+specification CouponReceiveActivitySpec {
+    #allScalars
+
+    id(coupon)
+
+    ge(effectiveDate)
+
+    le(effectiveDate)
+
+    ge(expirationDate)
+
+    le(expirationDate)
+
+    id(creator)
+}

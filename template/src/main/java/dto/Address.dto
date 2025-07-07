@@ -1,0 +1,13 @@
+export org.example.mysteryboxlearn.address.entity.Address
+
+input AddressInput {
+    #allScalars(Address)
+
+    id
+}
+
+specification AddressSpec {
+    #allScalars
+
+    id(creator)
+}

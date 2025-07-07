@@ -1,0 +1,21 @@
+export org.example.mysteryboxlearn.vip.order.entity.VipOrder
+
+input VipOrderInput {
+    #allScalars(VipOrder)
+
+    id
+
+    id(user)
+
+    id(vipPackage)
+}
+
+specification VipOrderSpec {
+    #allScalars
+
+    id(user)
+
+    id(vipPackage)
+
+    id(creator)
+}

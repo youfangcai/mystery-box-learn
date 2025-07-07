@@ -1,0 +1,15 @@
+export org.example.mysteryboxlearn.feedback.entity.Feedback
+
+input FeedbackInput {
+    #allScalars(Feedback)
+
+    id
+}
+
+specification FeedbackSpec {
+    #allScalars
+
+    like /i(content)
+
+    id(creator)
+}

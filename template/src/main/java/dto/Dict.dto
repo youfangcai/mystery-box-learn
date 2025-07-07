@@ -1,0 +1,13 @@
+export org.example.mysteryboxlearn.dict.entity.Dict
+
+input DictInput {
+    #allScalars(Dict)
+
+    id
+}
+
+specification DictSpec {
+    #allScalars
+
+    id(creator)
+}

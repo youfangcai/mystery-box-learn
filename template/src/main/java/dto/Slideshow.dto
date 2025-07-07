@@ -1,0 +1,17 @@
+export org.example.mysteryboxlearn.slideshow.entity.Slideshow
+
+input SlideshowInput {
+    #allScalars(Slideshow)
+
+    id
+}
+
+specification SlideshowSpec {
+    #allScalars
+
+    like /i(content)
+
+    like /i(navigatorId)
+
+    id(creator)
+}

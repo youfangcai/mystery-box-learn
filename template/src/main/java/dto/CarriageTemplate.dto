@@ -1,0 +1,17 @@
+export org.example.mysteryboxlearn.carriage.entity.CarriageTemplate
+
+input CarriageTemplateInput {
+    #allScalars(CarriageTemplate)
+
+    id
+}
+
+specification CarriageTemplateSpec {
+    #allScalars
+
+    like /i(name)
+
+    like /i(description)
+
+    id(creator)
+}

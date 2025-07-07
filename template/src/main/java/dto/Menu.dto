@@ -1,0 +1,13 @@
+export org.example.mysteryboxlearn.menu.entity.Menu
+
+input MenuInput {
+    #allScalars(Menu)
+
+    id
+}
+
+specification MenuSpec {
+    #allScalars
+
+    id(creator)
+}

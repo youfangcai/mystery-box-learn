@@ -1,0 +1,13 @@
+export org.example.mysteryboxlearn.user.root.entity.User
+
+input UserInput {
+    #allScalars(User)
+
+    id
+}
+
+specification UserSpec {
+    #allScalars
+
+    id(creator)
+}

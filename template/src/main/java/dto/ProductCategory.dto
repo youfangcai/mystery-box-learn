@@ -1,0 +1,13 @@
+export org.example.mysteryboxlearn.product.category.entity.ProductCategory
+
+input ProductCategoryInput {
+    #allScalars(ProductCategory)
+
+    id
+}
+
+specification ProductCategorySpec {
+    #allScalars
+
+    id(creator)
+}

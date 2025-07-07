@@ -1,0 +1,13 @@
+export org.example.mysteryboxlearn.box.root.entity.MysteryBox
+
+input MysteryBoxInput {
+    #allScalars(MysteryBox)
+
+    id
+}
+
+specification MysteryBoxSpec {
+    #allScalars
+
+    id(creator)
+}

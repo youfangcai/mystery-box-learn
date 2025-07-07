@@ -1,0 +1,13 @@
+export org.example.mysteryboxlearn.user.wechat.entity.UserWeChat
+
+input UserWeChatInput {
+    #allScalars(UserWeChat)
+
+    id
+}
+
+specification UserWeChatSpec {
+    #allScalars
+
+    id(creator)
+}

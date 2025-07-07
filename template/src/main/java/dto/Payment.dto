@@ -1,0 +1,13 @@
+export org.example.mysteryboxlearn.payment.entity.Payment
+
+input PaymentInput {
+    #allScalars(Payment)
+
+    id
+}
+
+specification PaymentSpec {
+    #allScalars
+
+    id(creator)
+}

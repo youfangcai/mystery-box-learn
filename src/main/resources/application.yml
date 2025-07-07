@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: mystery-box-shop
+  profiles:
+    active: dev
+
+#  模拟静态图片资源api
+  mvc:
+    static-path-pattern: /static/**
+
+server:
+  port: 9912
+  tomcat:
+    max-http-form-post-size: 20MB

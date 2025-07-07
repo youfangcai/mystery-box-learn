@@ -1,0 +1,13 @@
+export org.example.mysteryboxlearn.refund.entity.RefundRecord
+
+input RefundRecordInput {
+    #allScalars(RefundRecord)
+
+    id
+}
+
+specification RefundRecordSpec {
+    #allScalars
+
+    id(creator)
+}

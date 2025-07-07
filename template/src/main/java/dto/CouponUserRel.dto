@@ -1,0 +1,21 @@
+export org.example.mysteryboxlearn.coupon.user.entity.CouponUserRel
+
+input CouponUserRelInput {
+    #allScalars(CouponUserRel)
+
+    id
+
+    id(coupon)
+
+    id(user)
+}
+
+specification CouponUserRelSpec {
+    #allScalars
+
+    id(coupon)
+
+    id(user)
+
+    id(creator)
+}

@@ -1,0 +1,45 @@
+package org.example.mysteryboxlearn.coupon.root.entity.controller;
+
+import org.example.mysteryboxlearn.coupon.root.entity.Coupon;
+
+@RestController
+@RequestMapping("front/coupon")
+@AllArgsConstructor
+@DefaultFetcherOwner(CouponRepository.class)
+@Transactional
+public class CouponForFrontController {
+    private final CouponRepository couponRepository;
+
+    @GetMapping("{id}")
+    public @FetchBy(value = "COMPLEX_FETCHER_FOR_FRONT") Coupon findById(@PathVariable String id) {
+        return couponRepository.findById(id, CouponRepository.COMPLEX_FETCHER_FOR_FRONT).orElseThrow(() -> new BusinessException("数据不存在"));
+    }
+
+    @PostMapping("query")
+    public Page<@FetchBy(value = "COMPLEX_FETCHER_FOR_FRONT") Coupon> query(@RequestBody QueryRequest<CouponSpec> queryRequest) {
+        queryRequest.getQuery().setCreatorId(StpUtil.getLoginIdAsString());
+        return couponRepository.findPage(queryRequest, CouponRepository.COMPLEX_FETCHER_FOR_FRONT);
+    }
+
+    @PostMapping("save")
+    public String save(@RequestBody @Validated CouponInput couponInput) {
+        if (StringUtils.hasText(couponInput.getId())) {
+            Coupon coupon = couponRepository.findById(couponInput.getId(), CouponRepository.COMPLEX_FETCHER_FOR_FRONT).orElseThrow(() -> new BusinessException("数据不存在"));
+            if (!coupon.creator().id().equals(StpUtil.getLoginIdAsString())) {
+                throw new BusinessException("只能修改自己的数据");
+            }
+        }
+        return couponRepository.save(couponInput.toEntity()).id();
+    }
+
+    @DeleteMapping
+    public Boolean delete(@RequestBody List<String> ids) {
+        couponRepository.findByIds(ids, CouponRepository.COMPLEX_FETCHER_FOR_FRONT).forEach(coupon -> {
+            if (!coupon.creator().id().equals(StpUtil.getLoginIdAsString())) {
+                throw new BusinessException("只能删除自己的数据");
+            }
+        });
+        couponRepository.deleteAllById(ids);
+        return true;
+    }
+}

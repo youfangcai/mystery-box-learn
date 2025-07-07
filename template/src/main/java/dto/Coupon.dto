@@ -1,0 +1,23 @@
+export org.example.mysteryboxlearn.coupon.root.entity.Coupon
+
+input CouponInput {
+    #allScalars(Coupon)
+
+    id
+}
+
+specification CouponSpec {
+    #allScalars
+
+    like /i(name)
+
+    ge(effectiveDate)
+
+    le(effectiveDate)
+
+    ge(expirationDate)
+
+    le(expirationDate)
+
+    id(creator)
+}
